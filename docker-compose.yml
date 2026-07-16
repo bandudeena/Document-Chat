@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${APP_PORT:-8080}:8000"
+    environment:
+      # Pass AWS credentials from your shell (or use the volume mount below
+      # with a configured ~/.aws instead — see README).
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_SESSION_TOKEN
+      - AWS_PROFILE
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+    volumes:
+      - rag-data:/app/data          # FAISS index + document registry survive restarts
+      - ~/.aws:/home/appuser/.aws:ro # optional: use local AWS profiles
+    restart: unless-stopped
+
+volumes:
+  rag-data:
