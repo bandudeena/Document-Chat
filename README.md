@@ -4,8 +4,6 @@ A fullstack RAG application: upload PDFs, text or Markdown files and ask questio
 
 Built for the "Chat With Your Docs" assignment option. Stack: **FastAPI + LangChain + AWS Bedrock (Claude Haiku 4.5 + Titan Embeddings v2) + FAISS + React**.
 
-> **Note to reviewers on authorship:** I built this with an AI coding assistant (details in the [AI-assisted development](#how-i-used-ai-tools) section). This README reflects my decisions and my reasoning; the "why" behind every choice below is mine.
-
 ---
 
 ## Quick setup
